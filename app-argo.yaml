@@ -11,7 +11,9 @@ spec:
     path: "test-app"
     auth:
       secretRef:
-        name: my-github-creds  # Secret with your GitHub credentials
+        name: my-github-creds  # Secret with your GitHub credentials using 
+        #sudo microk8s kubectl create secret generic my-github-creds --from-literal=username=skroy.it@gmail.com --from-literal=pa
+         #ssword=...... -n argocd 
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: default
