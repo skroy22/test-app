@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: busybox-test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: busybox-test
+  template:
+    metadata:
+      labels:
+        app: busybox-test
+    spec:
+      containers:
+        - name: busybox
+          image: busybox:1.35-uclibc
+          command:
+            - "/bin/sh"
+            - "-c"
+            - |
+              echo "Hello from BusyBox!" > /data/hello.txt && tail -f /data/hello.txt
+          volumeMounts:
+            - mountPath: /data
+              name: ceph-storage   # Mounting the PVC here
+      volumes:
+        - name: ceph-storage
+          persistentVolumeClaim:
+            claimName: ceph-pvc  # Reference to the already created PVC
