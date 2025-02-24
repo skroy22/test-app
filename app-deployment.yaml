@@ -26,4 +26,4 @@ spec:
       volumes:
         - name: ceph-storage
           persistentVolumeClaim:
-            claimName: ceph-pvc  # Reference to the already created PVC
+            claimName: ceph-pvc-1  # Reference to the already created PVC
