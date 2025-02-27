@@ -1,1 +1,13 @@
 # It was already created through Ansible.
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: ceph-pvc-argo-4
+  namespace: default
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 500Mi
+  storageClassName: ceph-rbd
