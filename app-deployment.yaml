@@ -14,7 +14,7 @@ spec:
         app: test-app-argo-new
     spec:
       containers:
-        - name: busybox-argo
+        - name: test-app-argo-new
           image: busybox:1.35-uclibc
           command:
             - "/bin/sh"
@@ -25,6 +25,6 @@ spec:
             - mountPath: /data
               name: ceph-storage-argo-new   # Mounting the PVC here
       volumes:
-        - name: ceph-storage-argo
+        - name: ceph-storage-argo-new
           persistentVolumeClaim:
             claimName: test-app-pvc-argo-new  # Reference to the already created PVC
