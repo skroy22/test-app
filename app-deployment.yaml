@@ -1,17 +1,17 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: busybox-test-argo
+  name: test-app-argo-new
   namespace: default
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
-      app: busybox-test-argo
+      app: test-app-argo-new
   template:
     metadata:
       labels:
-        app: busybox-test-argo
+        app: test-app-argo-new
     spec:
       containers:
         - name: busybox-argo
@@ -23,8 +23,8 @@ spec:
               echo "Hello from BusyBox!" > /data/hello.txt && tail -f /data/hello.txt
           volumeMounts:
             - mountPath: /data
-              name: ceph-storage-argo   # Mounting the PVC here
+              name: ceph-storage-argo-new   # Mounting the PVC here
       volumes:
         - name: ceph-storage-argo
           persistentVolumeClaim:
-            claimName: ceph-pvc-argo-4  # Reference to the already created PVC
+            claimName: test-app-pvc-argo-new  # Reference to the already created PVC
