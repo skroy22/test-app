@@ -23,8 +23,8 @@ spec:
               echo "Hello from BusyBox!" > /data/hello.txt && tail -f /data/hello.txt
           volumeMounts:
             - mountPath: /data
-              name: ceph-storage-argo-new   # Mounting the PVC here
+              name: ceph-storage-argo-new-1   # Mounting the PVC here
       volumes:
         - name: ceph-storage-argo-new
           persistentVolumeClaim:
-            claimName: test-app-pvc-argo-new  # Reference to the already created PVC
+            claimName: test-app-pvc-argo-new-1  # Reference to the already created PVC
