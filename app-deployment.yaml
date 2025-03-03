@@ -4,7 +4,7 @@ metadata:
   name: test-app-argo-new
   namespace: default
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: test-app-argo-new
