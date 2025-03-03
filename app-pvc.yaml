@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: test-app-pvc-argo-new
+  name: test-app-pvc-argo-new-1
   namespace: default
 spec:
   accessModes:
