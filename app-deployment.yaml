@@ -25,6 +25,6 @@ spec:
             - mountPath: /data
               name: ceph-storage-argo-new-1   # Mounting the PVC here
       volumes:
-        - name: ceph-storage-argo-new
+        - name: ceph-storage-argo-new-1
           persistentVolumeClaim:
             claimName: test-app-pvc-argo-new-1  # Reference to the already created PVC
